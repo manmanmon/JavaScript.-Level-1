@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        let depositSum = String(prompt('Введите сумму вклада'));
+        let depositSumLength = depositSum.length;
+        let lastNum = depositSum.charAt(depositSumLength - 1);
+        let penultimateNum = depositSum.charAt(depositSumLength - 2);
+
+        function getCase() {
+            if (penultimateNum == 1) {
+                alert('Ваша сумма в ' + depositSum + ' рубей успешно зачислена.');
+            } else {
+                switch (lastNum) {
+                    case '1':
+                        return alert('Ваша сумма в ' + depositSum + ' рубль успешно зачислена.');
+                    case '2':
+                    case '3':
+                    case '4':
+                        return alert('Ваша сумма в ' + depositSum + ' рубля успешно зачислена.');
+                    case '5':
+                    case '6':
+                    case '7':
+                    case '8':
+                    case '9':
+                    case '0':
+                        return alert('Ваша сумма в ' + depositSum + ' рублей успешно зачислена.');
+                    case '0':
+                        return alert('Ваша сумма в ' + depositSum + ' рублей успешно зачислена.');
+                }
+            }
+        }
+        getCase();
+    </script>
+</body>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+
+        //ES 5
+        /*
+        function Product(name, price) {
+            this.name = name;
+            this.price = price;
+        }
+
+        Product.prototype.make25PercentDiscount = function () {
+            this.price = this.price * 0.75;
+        };
+
+        let product1 = new Product('twix', 55);
+        product1.make25PercentDiscount();
+        */
+
+        //ES 6
+        class Product {
+            constructor(name, price) {
+                this.name = name;
+                this.price = price;
+            }
+
+            make25PercentDiscount() {
+                this.price = this.price * 0.75;
+            }
+        }
+        let product1 = new Product('twix', 55);
+        product1.make25PercentDiscount();
+    </script>
+    </script>
+</body>
+
+</html>

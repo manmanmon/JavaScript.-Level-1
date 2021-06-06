@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+
+        //ES 5
+        /*
+        function Post(author, text, date) {
+            this.author = author;
+            this.text = text;
+            this.date = date;
+        }
+
+        Post.prototype.edit = function () {
+            this.text = text; //не уверен, что правильно понял то, что необходимо реализовать в данном пункте
+        }
+
+        function AttachedPost(author, text, date, highlighted) {
+            Post.call(this, author, text, date);
+            this.highlighted = highlighted;
+        }
+
+        AttachedPost.prototype = Object.create(Post.prototype);
+        AttachedPost.prototype = AttachedPost;
+
+        AttachedPost.prototype.makeTextHighlighted = function () {
+            this.highlighted = true;
+        }
+
+        let post1 = new AttachedPost('Alex', 'lorem ipsum', '10.01.2021', false);
+        post1.makeTextHighlighted();
+        */
+
+        //ES 6
+        class Post {
+            constructor(author, text, date) {
+                this.author = author;
+                this.text = text;
+                this.date = date;
+            }
+
+            edit() {
+                this.text = text; //не уверен, что правильно понял то, что необходимо реализовать в данном пункте
+            }
+        }
+
+
+        class AttachedPost extends Post {
+            constructor(author, text, date, highlighted) {
+                super(author, text, date);
+                this.highlighted = highlighted;
+            }
+            makeTextHighlighted() {
+                this.highlighted = true;
+            }
+        }
+
+        let post1 = new AttachedPost('Alex', 'lorem ipsum', '10.01.2021', false);
+        post1.makeTextHighlighted();
+    </script>
+</body>
+
+</html>
